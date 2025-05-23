@@ -1,0 +1,56 @@
+import java.util.Scanner;
+
+class Main {
+ 
+   public static void main(String[] args) {
+
+		// Create a Scanner object for user input
+		Scanner scanner = new Scanner(System.in);
+
+		// Ask the user for the size of the array
+		System.out.print("Enter the size of the array: ");
+		int n = scanner.nextInt();
+
+		// Create an array to store user-input elements
+		int num[] = new int[n];
+
+		// Prompt the user to enter array elements
+		System.out.println("Enter array elements:");
+
+		// Loop to get input elements and calculate the sum
+		for (int i = 0; i < n; i++) {
+			num[i] = scanner.nextInt();
+		}
+
+        System.out.println("Enter k:");							
+		int rotateBy = scanner.nextInt();
+		// Create a temporary array to store the rotated version
+		int temp[] = new int[n];
+	
+		// Keep track of the current index in temp[]
+		int tempIndex = 0;
+	
+		// Store the rotated elements (from index rotateBy to the end) in temp[]
+		for (int i = rotateBy; i < n; i++) {
+			temp[tempIndex] = num[i];
+			tempIndex++;
+		}
+	
+		// Store the first rotateBy elements of array num[] in temp
+		for (int i = 0; i < rotateBy; i++) {
+			temp[tempIndex] = num[i];
+			tempIndex++;
+		}
+	
+		// Copy the elements from temp[] back to num[] to get the final rotated array
+		for (int i = 0; i < n; i++) {
+			num[i] = temp[i];
+		}
+
+		for (int i = 0; i < n; i++) {
+          System.out.println(num[i]);
+        }
+	
+  }
+ 
+}
