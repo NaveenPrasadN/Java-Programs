@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        // Input size of array
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter size of the array: ");
+        int size = scanner.nextInt();
+		int[] arr = new int[size];
+
+        // Input array elements
+        System.out.println("Enter elements in array: ");
+        for (int i = 0; i < size; i++) {
+            arr[i] = scanner.nextInt();
+        }
+
+        // Print array in reversed order
+        System.out.println("Array in reverse order: ");
+        for (int i = size - 1; i >= 0; i--) {
+            System.out.print(arr[i] + "\t");
+        }
+		System.out.println();
+        scanner.close();
+    }
+}
