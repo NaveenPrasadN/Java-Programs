@@ -1,0 +1,39 @@
+
+import java.util.Scanner;
+public class MaxMinInArray {
+    public static void main(String[] args) {
+        // Input size of the array
+        Scanner scanner = new Scanner(System.in);
+        int size = scanner.nextInt();
+        
+        //Declare the array
+        int[] arr = new int[size];
+        
+        // Input array elements
+        for (int i = 0; i < size; i++) {
+            arr[i] = scanner.nextInt();
+        }
+
+        // Assume first element as maximum and minimum
+        int maxElement = arr[0];
+        int minElement = arr[0];
+
+         for (int i = 1; i < size; i++) {
+            // If current element is greater than max
+            if (arr[i] > maxElement) {
+                maxElement = arr[i];
+            }
+
+            // If current element is smaller than min
+            if (arr[i] < minElement) {
+                minElement = arr[i];
+            }
+        }
+
+        // Print maximum and minimum element
+        System.out.println("Maximum: " + maxElement);
+        System.out.println("Minimum: " + minElement);
+
+        scanner.close();
+    }
+}
