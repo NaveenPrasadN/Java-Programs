@@ -1,0 +1,52 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        // Input size of the array
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter size of the array: ");
+        int size = scanner.nextInt();
+		int [] arr = new int[size];
+
+        // Input elements in array
+        System.out.println("Enter elements in array: ");
+        for (int i = 0; i < size; i++) {
+            arr[i] = scanner.nextInt();
+        }
+
+        // Input new element and position to insert
+        System.out.println("Enter element to insert: ");
+        int num = scanner.nextInt();
+        System.out.println("Enter the element position: ");
+        int pos = scanner.nextInt();
+
+        // If position of element is not valid
+        if (pos > size + 1 || pos <= 0) {
+            System.out.printf("Invalid position! Please enter position between 1 to %d\n", size + 1);
+        } else {
+			//Creating new array with size + 1
+            int[] newArr = new int[size + 1];
+
+			//Copy elements till position
+			for(int i = 0; i < pos - 1; i++){
+				newArr[i] = arr[i];
+			}
+
+			//Inserting the new element
+			newArr[pos - 1] = num;
+
+			//Copying the rest elements
+			for(int i = pos; i <= size; i++){
+				newArr[i] = arr[i - 1];
+			}
+
+            // Print array after insert operation
+            System.out.print("Array elements after insertion: ");
+            for (int i = 0; i <= size; i++) {
+                System.out.print(newArr[i] + " ");
+            }
+        }
+
+        scanner.close();
+    }
+}
