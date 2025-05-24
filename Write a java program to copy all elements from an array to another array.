@@ -1,0 +1,37 @@
+import java.util.Scanner;
+public class CopyArray {
+    public static void main(String[] args) {
+        // Input size of the array
+        Scanner scanner = new Scanner(System.in);
+        int size = scanner.nextInt();
+        
+        //Declare the array
+        int[] source = new int[size];
+        int[] dest = new int[size];
+        
+        // Input array elements
+        for (int i = 0; i < size; i++) {
+            source[i] = scanner.nextInt();
+        }
+
+       // Copy all elements from source array to dest array
+        for (int i = 0; i < size; i++) {
+            dest[i] = source[i];
+        }
+
+        // Print all elements of source array
+        System.out.print("Array1: ");
+        for (int i = 0; i < size; i++) {
+            System.out.print(source[i] + "\t");
+        }
+        
+        System.out.println();
+        
+        // Print all elements of dest array
+        System.out.print("Array2: ");
+        for (int i = 0; i < size; i++) {
+            System.out.print(dest[i] + "\t");
+        }
+        scanner.close();
+    }
+}
